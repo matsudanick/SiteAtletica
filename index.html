@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlética TI - Loja Oficial</title>
+    <link rel="icon" href="TI.jpeg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="TI.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="TI.jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="TI.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="TI.jpeg" alt="Logo Atlética TI" class="logo-img">
+                <div class="logo">Atlética TI</div>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li>
+                    <button id="cart-button" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Bem-vindo à Loja da Atlética TI</h1>
+            <p>Vista-se com estilo e tecnologia</p>
+        </section>
+
+        <section id="produtos" class="produtos">
+            <h2>Nossos Produtos</h2>
+            <div class="produtos-grid">
+                <div class="categoria">
+                    <h3>Camisetas</h3>
+                    <div class="produtos-container" id="camisetas">
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="Camiseta Tech">
+                            <h4>Camiseta Tech</h4>
+                            <p>R$ 79,90</p>
+                            <button onclick="adicionarAoCarrinho('Camiseta Tech', 79.90)">Adicionar ao Carrinho</button>
+                        </div>
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500" alt="Camiseta Code">
+                            <h4>Camiseta Code</h4>
+                            <p>R$ 89,90</p>
+                            <button onclick="adicionarAoCarrinho('Camiseta Code', 89.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categoria">
+                    <h3>Calças</h3>
+                    <div class="produtos-container" id="calcas">
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500" alt="Calça Tech">
+                            <h4>Calça Tech</h4>
+                            <p>R$ 129,90</p>
+                            <button onclick="adicionarAoCarrinho('Calça Tech', 129.90)">Adicionar ao Carrinho</button>
+                        </div>
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=500" alt="Calça Sport">
+                            <h4>Calça Sport</h4>
+                            <p>R$ 119,90</p>
+                            <button onclick="adicionarAoCarrinho('Calça Sport', 119.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categoria">
+                    <h3>Canecas</h3>
+                    <div class="produtos-container" id="canecas">
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1517256673644-36ad11246d21?w=500" alt="Caneca Programador">
+                            <h4>Caneca Programador</h4>
+                            <p>R$ 39,90</p>
+                            <button onclick="adicionarAoCarrinho('Caneca Programador', 39.90)">Adicionar ao Carrinho</button>
+                        </div>
+                        <div class="produto">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500" alt="Caneca Dev">
+                            <h4>Caneca Dev</h4>
+                            <p>R$ 34,90</p>
+                            <button onclick="adicionarAoCarrinho('Caneca Dev', 34.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="carrinho" class="carrinho">
+        <div class="carrinho-header">
+            <h3>Seu Carrinho</h3>
+            <button id="close-cart" class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="itens-carrinho"></div>
+        <div id="total-carrinho">Total: R$ 0,00</div>
+        <button onclick="finalizarCompra()" class="checkout-button">
+            <i class="fas fa-shopping-bag"></i>
+            Finalizar Compra
+        </button>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>A Atlética TI representa os cursos de tecnologia com orgulho e estilo.</p>
+            </div>
+            <div class="footer-section">
+                <section id="contato">
+                <h4>Contato</h4>
+                <p>Email: contato@atleticati.com</p>
+                <p>WhatsApp: (11) 99999-9999</p>
+            </section>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Atlética TI - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
